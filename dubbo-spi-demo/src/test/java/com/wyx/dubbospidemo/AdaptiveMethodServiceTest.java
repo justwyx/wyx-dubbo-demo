@@ -1,18 +1,18 @@
 package com.wyx.dubbospidemo;
 
-import com.wyx.dubbospidemo.service.Order;
-import com.wyx.dubbospidemo.service2.GoodsOrder;
+import com.wyx.dubbospidemo.adaptiveMethodService.GoodsOrder;
 import org.apache.dubbo.common.URL;
 import org.apache.dubbo.common.extension.ExtensionLoader;
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 /**
+ * 用于测试 @Adaptive方法
  * @author : Just wyx
  * @Date : 2020/11/30
  */
 @SpringBootTest
-public class GoodsOrderTest {
+public class AdaptiveMethodServiceTest {
 	@Test
 	public void test() {
 		ExtensionLoader<GoodsOrder> extensionLoader = ExtensionLoader.getExtensionLoader(GoodsOrder.class);

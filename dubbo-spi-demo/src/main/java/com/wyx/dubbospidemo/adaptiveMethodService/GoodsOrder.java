@@ -1,4 +1,4 @@
-package com.wyx.dubbospidemo.service2;
+package com.wyx.dubbospidemo.adaptiveMethodService;
 
 import org.apache.dubbo.common.URL;
 import org.apache.dubbo.common.extension.Adaptive;

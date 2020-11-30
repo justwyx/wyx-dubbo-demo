@@ -1,6 +1,6 @@
-package com.wyx.dubbospidemo.service2.impl;
+package com.wyx.dubbospidemo.adaptiveMethodService.impl;
 
-import com.wyx.dubbospidemo.service2.GoodsOrder;
+import com.wyx.dubbospidemo.adaptiveMethodService.GoodsOrder;
 import org.apache.dubbo.common.URL;
 
 /**

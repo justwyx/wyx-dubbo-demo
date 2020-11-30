@@ -1,8 +1,8 @@
-package com.wyx.dubbospidemo.service2;
+package com.wyx.dubbospidemo.adaptiveMethodService;
 
 import org.apache.dubbo.common.extension.ExtensionLoader;
 
-public class GoodsOrder$Adaptive implements com.wyx.dubbospidemo.service2.GoodsOrder {
+public class GoodsOrder$Adaptive implements com.wyx.dubbospidemo.adaptiveMethodService.GoodsOrder {
 	public java.lang.String way() {
 		throw new UnsupportedOperationException("The method public abstract java.lang.String com.wyx.dubbospidemo.service2.GoodsOrder.way() of interface com.wyx.dubbospidemo.service2.GoodsOrder is not adaptive method!");
 	}
@@ -13,7 +13,7 @@ public class GoodsOrder$Adaptive implements com.wyx.dubbospidemo.service2.GoodsO
 		String extName = url.getParameter("goods.order", "alipay");
 		if (extName == null)
 			throw new IllegalStateException("Failed to get extension (com.wyx.dubbospidemo.service2.GoodsOrder) name from url (" + url.toString() + ") use keys([goods.order])");
-		com.wyx.dubbospidemo.service2.GoodsOrder extension = (com.wyx.dubbospidemo.service2.GoodsOrder) ExtensionLoader.getExtensionLoader(com.wyx.dubbospidemo.service2.GoodsOrder.class).getExtension(extName);
+		com.wyx.dubbospidemo.adaptiveMethodService.GoodsOrder extension = (com.wyx.dubbospidemo.adaptiveMethodService.GoodsOrder) ExtensionLoader.getExtensionLoader(com.wyx.dubbospidemo.adaptiveMethodService.GoodsOrder.class).getExtension(extName);
 		extension.pay(arg0);
 	}
 }
