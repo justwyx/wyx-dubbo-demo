@@ -11,5 +11,6 @@
 
     <modules>
         <module>dubbo-test-demo</module>
+        <module>dubbo-spi-demo</module>
     </modules>
 </project>

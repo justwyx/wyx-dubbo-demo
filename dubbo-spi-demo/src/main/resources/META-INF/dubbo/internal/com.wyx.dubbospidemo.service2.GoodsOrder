@@ -1,0 +1,2 @@
+alipay=com.wyx.dubbospidemo.service2.impl.AlipayGoodsOrder
+weChat,xxx=com.wyx.dubbospidemo.service2.impl.WeChatGoodsOrder
