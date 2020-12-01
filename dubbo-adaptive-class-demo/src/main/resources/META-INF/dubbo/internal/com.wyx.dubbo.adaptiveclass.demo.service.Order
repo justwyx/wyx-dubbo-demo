@@ -1,0 +1,3 @@
+com.wyx.dubbo.adaptiveclass.demo.service.impl.AlipayOrder
+com.wyx.dubbo.adaptiveclass.demo.service.impl.AdaptiveOrder
+com.wyx.dubbo.adaptiveclass.demo.service.impl.WechatOrder

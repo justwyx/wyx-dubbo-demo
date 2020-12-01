@@ -14,5 +14,6 @@
         <module>dubbo-spi-demo</module>
         <module>dubbo-wrapper-demo</module>
         <module>dubbo-adaptive-method-demo</module>
+        <module>dubbo-adaptive-class-demo</module>
     </modules>
 </project>
