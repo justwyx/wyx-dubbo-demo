@@ -1,4 +1,0 @@
-alipay=com.wyx.dubbowrapperdemo.service.impl.AlipayOrder
-weChat=com.wyx.dubbowrapperdemo.service.impl.WeChatOrder
-Wrapper=com.wyx.dubbowrapperdemo.service.impl.OrderWrapper
-Wrapper2=com.wyx.dubbowrapperdemo.service.impl.OrderWrapper2

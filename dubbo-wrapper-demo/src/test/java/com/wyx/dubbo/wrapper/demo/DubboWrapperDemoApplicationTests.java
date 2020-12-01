@@ -1,4 +1,4 @@
-package com.wyx.dubbowrapperdemo;
+package com.wyx.dubbo.wrapper.demo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,7 +1,6 @@
-package com.wyx.dubbowrapperdemo.service;
+package com.wyx.dubbo.wrapper.demo.service;
 
 import org.apache.dubbo.common.URL;
-import org.apache.dubbo.common.extension.Adaptive;
 import org.apache.dubbo.common.extension.SPI;
 
 /**
@@ -12,5 +11,5 @@ import org.apache.dubbo.common.extension.SPI;
 public interface Order {
 	String way();
 
-	void pay(URL str);
+	String pay(URL url);
 }

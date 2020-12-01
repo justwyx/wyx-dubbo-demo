@@ -10,6 +10,9 @@ import org.springframework.boot.test.context.SpringBootTest;
  */
 @SpringBootTest
 public class OrderTest {
+	/**
+	 * 根据 getExtension("name") 指定实现类
+	 */
 	@Test
 	public void test() {
 		ExtensionLoader<Order> extensionLoader = ExtensionLoader.getExtensionLoader(Order.class);

@@ -1,0 +1,4 @@
+alipay=com.wyx.dubbo.wrapper.demo.service.impl.AlipayOrder
+wechat=com.wyx.dubbo.wrapper.demo.service.impl.WechatOrder
+Wrapper=com.wyx.dubbo.wrapper.demo.service.impl.OrderWrapper
+Wrapper2=com.wyx.dubbo.wrapper.demo.service.impl.OrderWrapper2

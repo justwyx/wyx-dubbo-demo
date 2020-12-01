@@ -1,4 +1,4 @@
-package com.wyx.dubbowrapperdemo;
+package com.wyx.dubbo.wrapper.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

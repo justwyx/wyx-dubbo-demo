@@ -1,6 +1,6 @@
-package com.wyx.dubbowrapperdemo.service.impl;
+package com.wyx.dubbo.wrapper.demo.service.impl;
 
-import com.wyx.dubbowrapperdemo.service.Order;
+import com.wyx.dubbo.wrapper.demo.service.Order;
 import org.apache.dubbo.common.URL;
 
 /**
@@ -23,9 +23,10 @@ public class OrderWrapper implements Order {
 	}
 
 	@Override
-	public void pay(URL str) {
+	public String pay(URL str) {
 		System.out.println("before-OrderWrapper-对pay方法进行增强");
-		order.pay(str);
+		String pay = order.pay(str);
 		System.out.println("end-OrderWrapper-对pay方法进行增强");
+		return pay;
 	}
 }
