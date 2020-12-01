@@ -1,7 +1,5 @@
-package com.wyx.dubbospidemo.service;
+package com.wyx.dubbo.spi.demo.service;
 
-import org.apache.dubbo.common.URL;
-import org.apache.dubbo.common.extension.Adaptive;
 import org.apache.dubbo.common.extension.SPI;
 
 /**
@@ -11,7 +9,4 @@ import org.apache.dubbo.common.extension.SPI;
 @SPI("alipay")
 public interface Order {
 	String way();
-
-	@Adaptive
-	void pay(URL str);
 }

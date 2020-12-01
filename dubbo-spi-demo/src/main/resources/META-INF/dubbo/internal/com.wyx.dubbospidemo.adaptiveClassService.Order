@@ -1,3 +1,0 @@
-alipay=com.wyx.dubbospidemo.adaptiveClassService.impl.AlipayOrder
-weChat=com.wyx.dubbospidemo.adaptiveClassService.impl.WeChatOrder
-adaptive=com.wyx.dubbospidemo.adaptiveClassService.impl.AdaptiveOrder

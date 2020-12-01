@@ -1,0 +1,2 @@
+alipay=com.wyx.dubbo.spi.demo.service.impl.AlipayOrder
+wechat,xxx=com.wyx.dubbo.spi.demo.service.impl.WechatOrder
