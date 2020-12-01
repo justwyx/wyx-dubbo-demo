@@ -15,5 +15,6 @@
         <module>dubbo-wrapper-demo</module>
         <module>dubbo-adaptive-method-demo</module>
         <module>dubbo-adaptive-class-demo</module>
+        <module>dubbo-activate-demo</module>
     </modules>
 </project>

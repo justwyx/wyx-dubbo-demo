@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.3.0.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.wyx</groupId>
+	<artifactId>dubbo-activate-demo</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>dubbo-activate-demo</name>
+	<description>
+		激活机制 Activate
+			用于激活扩展类的。
+			Activate 机制，即扩展类的激活机制。通过指定的条件来激活当前的扩展类。其是通过 @Active 注解实现的。
+		@Activate 注解
+			在@Activate 注解中共有五个属性，其中 before、after 两个属性已经过时，剩余有效属 性还有三个。它们的意义为:
+			 group:为扩展类指定所属的组别，是当前扩展类的一个标识。String[]类型，表示一个
+			扩展类可以属于多个组。
+			 value:为当前扩展类指定的 key，是当前扩展类的一个标识。String[]类型，表示一个扩
+			展类可以有多个指定的 key。
+			 order:指定筛选条件相同的扩展类的加载顺序。序号越小，优先级越高。默认值为 0。
+	</description>
+
+	<properties>
+		<java.version>1.8</java.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.dubbo/dubbo -->
+		<dependency>
+			<groupId>org.apache.dubbo</groupId>
+			<artifactId>dubbo</artifactId>
+			<version>2.7.8</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

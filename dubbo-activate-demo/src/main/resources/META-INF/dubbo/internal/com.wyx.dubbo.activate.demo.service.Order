@@ -1,0 +1,5 @@
+com.wyx.dubbo.activate.demo.service.impl.AlipayOrder
+com.wyx.dubbo.activate.demo.service.impl.CardOrder
+com.wyx.dubbo.activate.demo.service.impl.CashOrder
+com.wyx.dubbo.activate.demo.service.impl.CouponOrder
+com.wyx.dubbo.activate.demo.service.impl.WechatOrder
