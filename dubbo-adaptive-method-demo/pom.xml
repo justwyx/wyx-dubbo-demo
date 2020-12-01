@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.3.0.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.wyx</groupId>
+	<artifactId>dubbo-adaptive-method-demo</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>dubbo-adaptive-method-demo</name>
+	<description>
+		自适应机制 Adaptive
+			Adaptive 机制，即扩展类的自适应机制。即其可以指定想要加载的扩展名，也可以不指 定。
+			若不指定，则直接加载默认的扩展类。即其会自动匹配，做到自适应。
+			其是通过@Adaptive 注解实现的。
+		@Adaptive 注解
+			@Adaptive 注解可以修饰类与方法，其作用相差很大。
+		@Adaptive 修饰方法
+			被@Adapative 修饰的 SPI 接口中的方法称为 Adaptive 方法。
+			在 SPI 扩展类中若没有找到 Adaptive 类，但系统却发现了 Adapative 方法，
+			就会根据 Adaptive 方法自动为该 SPI 接口动 态生成一个 Adaptive 扩展类，并自动将其编译。
+			例如 Protocol 接口中就包含两个 Adaptive 方法。
+		方法规范
+			从前面的动态生成的 Adaptive 类中的 adaptiveMethod()方法体可知，
+			其对于要加载的扩 展名的指定方式是通过 URL 类型的方法参数指定的。
+			所以对于 Adaptive 方法的定义规范仅 一条:其参数包含 URL 类型的参数，或参数可以获取到 URL 类型的值。
+			方法调用者是通过 URL 传递要加载的扩展名的。
+	</description>
+
+	<properties>
+		<java.version>1.8</java.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.dubbo/dubbo -->
+		<dependency>
+			<groupId>org.apache.dubbo</groupId>
+			<artifactId>dubbo</artifactId>
+			<version>2.7.8</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+</project>

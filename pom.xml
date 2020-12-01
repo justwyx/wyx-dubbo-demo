@@ -13,5 +13,6 @@
         <module>dubbo-test-demo</module>
         <module>dubbo-spi-demo</module>
         <module>dubbo-wrapper-demo</module>
+        <module>dubbo-adaptive-method-demo</module>
     </modules>
 </project>
