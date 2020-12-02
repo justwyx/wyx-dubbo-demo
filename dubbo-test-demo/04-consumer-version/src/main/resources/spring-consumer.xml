@@ -14,8 +14,10 @@
 <!--                     interface="com.wyx.service.SomeService" version="0.0.1"/>-->
 
     <!-- 使用新的服务 version="0.0.2" -->
+    <!-- protocol:用于指定协议-->
     <dubbo:reference id="someService" check="false"
-                     interface="com.wyx.service.SomeService" version="0.0.2"/>
+                     interface="com.wyx.service.SomeService"
+                     version="0.0.2" protocol="rmi"/>
 
     <!-- 不指定版本会失败 -->
 <!--    <dubbo:reference id="someService" check="false"-->

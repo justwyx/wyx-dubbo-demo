@@ -16,12 +16,21 @@
     <!--指定服务注册中心：指定集群配置，以下其中都行-->
     <dubbo:registry address="zookeeper://zkOS1:2181?backup=zkOS2:2182,zkOS3:2183"/>
 
+<!--    多协议支持-->
+    <dubbo:protocol name="dubbo" port="20880" />
+    <dubbo:protocol name="rmi" port="20881" />
+
     <!--注册服务执行对象,多版本-->
     <bean id="oldServiceImpl" class="com.wyx.provider.OldServiceImpl" />
     <bean id="newServiceImpl" class="com.wyx.provider.NewServiceImpl" />
 
     <!--服务暴露-->
-    <dubbo:service interface="com.wyx.service.SomeService" ref="oldServiceImpl" version="0.0.1"/>
-    <dubbo:service interface="com.wyx.service.SomeService" ref="newServiceImpl" version="0.0.2"/>
+    <dubbo:service interface="com.wyx.service.SomeService"
+                   ref="oldServiceImpl" version="0.0.1"/>
+
+    <!-- 指定新的服务支持多种协议-->
+    <dubbo:service interface="com.wyx.service.SomeService"
+                   ref="newServiceImpl" version="0.0.2"
+                   protocol="dubbo,rmi"/>
 
 </beans>
