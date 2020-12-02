@@ -8,14 +8,18 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
     <artifactId>dubbo-test-demo</artifactId>
     <packaging>pom</packaging>
+    <description>
+        01-直连式注册中心-demo
+    </description>
 
     <modules>
         <module>00-api</module>
-        <module>01-consumer</module>
         <module>01-provider</module>
+        <module>01-consumer</module>
+        <module>02-provider-zk</module>
+        <module>02-consumer-zk</module>
     </modules>
 
     <properties>
@@ -39,6 +43,17 @@
                 <groupId>org.apache.dubbo</groupId>
                 <artifactId>dubbo</artifactId>
                 <version>2.7.8</version>
+            </dependency>
+            <!-- zk-client依赖 -->
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-recipes</artifactId>
+                <version>5.1.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-framework</artifactId>
+                <version>5.1.0</version>
             </dependency>
             <!-- Spring依赖 -->
             <dependency>

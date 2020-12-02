@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+
+    <!--指定当前工程在管控平台中的名称-->
+    <dubbo:application name="02-consumer-zk"/>
+
+    <!--指定服务注册中心：指定单机配置，以下其中都行-->
+    <!--    <dubbo:registry address="zookeeper://zkOS1:2181"/>-->
+    <!--    <dubbo:registry protocol="zookeeper" address="zkOS1:2181"/>-->
+
+    <!--指定服务注册中心：指定集群配置，以下其中都行-->
+<!--    <dubbo:registry address="zookeeper://zkOS1:2181?backup=zkOS2:2181,zkOS3:2181"/>-->
+    <dubbo:registry protocol="zookeeper" address="zkOS1:2181,zkOS2:2181,zkOS3:2181"/>
+
+    <!--直连式连接提供者-->
+    <dubbo:reference id="someService" interface="com.wyx.service.SomeService"/>
+</beans>
