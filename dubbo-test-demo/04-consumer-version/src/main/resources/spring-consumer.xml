@@ -6,15 +6,18 @@
     <!--指定当前工程在管控平台中的名称-->
     <dubbo:application name="02-consumer-zk"/>
 
-    <!--指定服务注册中心：指定单机配置，以下其中都行-->
-    <!--    <dubbo:registry address="zookeeper://zkOS1:2181"/>-->
-    <!--    <dubbo:registry protocol="zookeeper" address="zkOS1:2181"/>-->
-
-    <!--指定服务注册中心：指定集群配置，以下其中都行-->
-<!--    <dubbo:registry address="zookeeper://zkOS1:2181?backup=zkOS2:2182,zkOS3:2183"/>-->
     <dubbo:registry protocol="zookeeper" address="zkOS1:2181,zkOS2:2182,zkOS3:2183"/>
 
     <!--连接提供者-->
-    <!-- check="false" 不检测服务提供者是否启动成功，默认为true -->
-    <dubbo:reference id="someService" check="false" interface="com.wyx.service.SomeService"/>
+    <!-- 使用旧的服务 version="0.0.1" -->
+<!--    <dubbo:reference id="someService" check="false"-->
+<!--                     interface="com.wyx.service.SomeService" version="0.0.1"/>-->
+
+    <!-- 使用新的服务 version="0.0.2" -->
+    <dubbo:reference id="someService" check="false"
+                     interface="com.wyx.service.SomeService" version="0.0.2"/>
+
+    <!-- 不指定版本会失败 -->
+<!--    <dubbo:reference id="someService" check="false"-->
+<!--                     interface="com.wyx.service.SomeService"/>-->
 </beans>

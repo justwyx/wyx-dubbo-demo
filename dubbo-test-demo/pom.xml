@@ -12,16 +12,20 @@
     <packaging>pom</packaging>
     <description>
         01-直连式注册中心-demo
+        02-ZK注册中心-demo
     </description>
 
     <modules>
         <module>00-api</module>
 
-        <module>01-consumer</module>
-        <module>01-provider</module>
+<!--        <module>01-consumer</module>-->
+<!--        <module>01-provider</module>-->
 
-        <module>02-consumer-zk</module>
-        <module>02-provider-zk</module>
+<!--        <module>02-consumer-zk</module>-->
+<!--        <module>02-provider-zk</module>-->
+
+        <module>04-consumer-version</module>
+        <module>04-provider-version</module>
     </modules>
 
     <properties>
