@@ -11,8 +11,8 @@
     <!--    <dubbo:registry protocol="zookeeper" address="zkOS1:2181"/>-->
 
     <!--指定服务注册中心：指定集群配置，以下其中都行-->
-<!--    <dubbo:registry address="zookeeper://zkOS1:2181?backup=zkOS2:2181,zkOS3:2181"/>-->
-    <dubbo:registry protocol="zookeeper" address="zkOS1:2181,zkOS2:2181,zkOS3:2181"/>
+<!--    <dubbo:registry address="zookeeper://zkOS1:2181?backup=zkOS2:2182,zkOS3:2183"/>-->
+    <dubbo:registry protocol="zookeeper" address="zkOS1:2181,zkOS2:2182,zkOS3:2183"/>
 
     <!--直连式连接提供者-->
     <dubbo:reference id="someService" interface="com.wyx.service.SomeService"/>
