@@ -11,7 +11,8 @@
     <dubbo:application name="01-provider" />
 
     <!--指定服务注册中心：不指定注册中心-->
-    <dubbo:registry address="N/A"/>
+    <!--仅注册，不订阅    subscribe="false"-->
+    <dubbo:registry address="N/A" subscribe="false"/>
 
     <!--注册服务执行对象-->
     <bean id="someService" class="com.wyx.provider.SomeServiceImpl" />

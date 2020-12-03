@@ -7,7 +7,8 @@
     <dubbo:application name="01-consumer"/>
 
     <!--指定注册中心：不使用注册中心-->
-    <dubbo:registry address="N/A"/>
+    <!-- 仅订阅，不注册   register="false"-->
+    <dubbo:registry address="N/A" register="false"/>
 
     <!--直连式连接提供者-->
     <dubbo:reference id="someService" interface="com.wyx.service.SomeService" url="dubbo://localhost:20880"/>
