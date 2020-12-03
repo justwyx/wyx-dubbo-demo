@@ -40,6 +40,10 @@
 
 <!--            <module>06-consumer-mocknull</module>-->
 <!--            <module>06-consumer-mockclass</module>-->
+
+        <module>06-provider-timeout</module>
+        <module>06-consumer-timeout</module>
+
     </modules>
 
     <properties>
