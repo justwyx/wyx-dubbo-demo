@@ -14,16 +14,6 @@
         01-直连式注册中心-demo
         02-ZK注册中心-demo
         02-zk02/02-zk03:负载均衡
-            若消费者与提供者均设置了负载均衡策略，消费者端设置的优先级高。
-            若消费者端没有显式的设置，但提供者端显式的设置了，且同一个服务(接口名、版本 号、分组都相同)的负载均衡策略相同。消费者调用时会按照提供者设置的策略调用。
-            若多个提供者端设置的不相同，则最后一个注册的会将前面注册的信息覆盖。
-            Dubbo 内置的负载均衡算法
-                Dubbo 内置了四种负载均衡算法。 A、 random
-                随机算法，是 Dubbo 默认的负载均衡算法。存在服务堆积问题。 B、 roundrobin
-                轮询算法。按照设定好的权重依次进行调度。
-                C、 leastactive 最少活跃度调度算法。即被调度的次数越少，其优选级就越高，被调度到的机率就越高。
-                D、 consistenthash
-                一致性 hash 算法。对于相同参数的请求，其会被路由到相同的提供者。
         04-多版本控制-demo
         05-服务分组-demo
     </description>
@@ -34,10 +24,10 @@
 <!--        <module>01-consumer</module>-->
 <!--        <module>01-provider</module>-->
 
-        <module>02-consumer-zk</module>
-        <module>02-provider-zk</module>
-        <module>02-provider-zk02</module>
-        <module>02-provider-zk03</module>
+<!--        <module>02-consumer-zk</module>-->
+<!--        <module>02-provider-zk</module>-->
+<!--        <module>02-provider-zk02</module>-->
+<!--        <module>02-provider-zk03</module>-->
 
 <!--        <module>04-consumer-version</module>-->
 <!--        <module>04-provider-version</module>-->
@@ -47,6 +37,9 @@
 
 <!--        <module>05-consumer-group</module>-->
 <!--        <module>05-provider-group</module>-->
+
+<!--            <module>06-consumer-mocknull</module>-->
+<!--            <module>06-consumer-mockclass</module>-->
     </modules>
 
     <properties>
