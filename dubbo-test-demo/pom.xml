@@ -20,9 +20,11 @@
 
     <modules>
         <module>00-api</module>
+<!--            <module>00-consumer-demo</module>-->
+<!--            <module>00-provider-demo</module>-->
 
-        <module>01-consumer</module>
-        <module>01-provider</module>
+<!--        <module>01-consumer</module>-->
+<!--        <module>01-provider</module>-->
 
 <!--        <module>02-consumer-zk</module>-->
 <!--        <module>02-provider-zk</module>-->

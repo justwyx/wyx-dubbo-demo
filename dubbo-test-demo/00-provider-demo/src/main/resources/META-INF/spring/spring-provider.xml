@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://dubbo.apache.org/schema/dubbo
+       http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+
+    <!--指定当前工程在Monitor中显示的名称，一般与工程名相同-->
+    <dubbo:application name="00-provider-demo" />
+
+    <!--指定服务注册中心：不指定注册中心-->
+    <!--仅注册，不订阅    subscribe="false"-->
+    <dubbo:registry address="N/A" subscribe="false"/>
+
+    <!--注册服务执行对象-->
+    <bean id="someService" class="com.wyx.provider.SomeServiceImpl"/>
+
+
+    <!-- ================================ 服务暴露 dubbo:service ================================ -->
+    <!--
+        服务暴露延迟  delay=""
+             正数:单位为毫秒，表示在提供者对象创建完毕后的指定时间后再发布服务。
+             0:默认值，表示当前提供者创建完毕后马上向注册中心暴露服务。
+             -1:表示在Spring容器初始化完毕后再向注册中心暴露服务。
+            注：0的话，当spring初始化完这个服务，这个服务就立马暴露出去了
+            -1的话如果这个服务初始化完成了，后面还有99个服务需要初始化， 则会等待这99个也一起初始化完成，并一起暴露服务
+    -->
+    <dubbo:service interface="com.wyx.service.SomeService"
+                   ref="someService"
+                   delay="0"/>
+
+</beans>
