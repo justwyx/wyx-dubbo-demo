@@ -8,23 +8,22 @@
        http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
 
     <!--指定当前工程在Monitor中显示的名称，一般与工程名相同-->
-    <dubbo:application name="02-provider-zk" >
+    <dubbo:application name="02-provider-zk02" >
         <!--指定qos端口-->
-        <dubbo:parameter key="qos.port" value="11111"></dubbo:parameter>
+        <dubbo:parameter key="qos.port" value="22222"></dubbo:parameter>
     </dubbo:application>
-
-    <!--指定服务注册中心：指定单机配置，以下其中都行-->
-<!--    <dubbo:registry address="zookeeper://zkOS1:2181"/>-->
-<!--    <dubbo:registry protocol="zookeeper" address="zkOS1:2181"/>-->
+    <dubbo:protocol name="dubbo" port="20882"/>
 
     <!--指定服务注册中心：指定集群配置，以下其中都行-->
     <dubbo:registry address="zookeeper://zkOS1:2181?backup=zkOS2:2182,zkOS3:2183"/>
-<!--    <dubbo:registry protocol="zookeeper" address="zkOS1:2181,zkOS2:2182,zkOS3:2183"/>-->
 
     <!--注册服务执行对象-->
     <bean id="someService" class="com.wyx.provider.SomeServiceImpl" />
 
     <!--服务暴露-->
-    <dubbo:service interface="com.wyx.service.SomeService" ref="someService"/>
+    <!--指定负载均衡算法  loadbalance="random" -->
+    <dubbo:service interface="com.wyx.service.SomeService" ref="someService" loadbalance="random">
+        <dubbo:method name="hello" loadbalance="roundrobin"></dubbo:method>
+    </dubbo:service>
 
 </beans>
