@@ -8,12 +8,14 @@
         <groupId>com.wyx</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <artifactId>06-provider-timeout</artifactId>
+    <artifactId>07-provider-cache</artifactId>
     <description>
-        服务超时-服务提供者
-            前面的服务降级的发生，其实是由于消费者调用服务超时引起的，
-            即从发出调用请求到 获取到提供者的响应结果这个时间超出了设定的时限。
-            默认服务调用超时时限为 1 秒。可以 在消费者端与提供者端设置超时时限。
+        声明式缓存-服务提供者
+            为了进一步提高消费者对用户的响应速度，减轻提供者的压力，
+            Dubbo 提供了基于结果 的声明式缓存。该缓存是基于消费者端的，
+            所以使用很简单，只需修改消费者配置文件，与 提供者无关。
+            仅需在 dubbo:reference 中添加 cache=”true”属性即可
+            默认缓存 1000 个结果
     </description>
 
     <dependencies>

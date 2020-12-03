@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://dubbo.apache.org/schema/dubbo
+       http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+
+    <!--指定当前工程在Monitor中显示的名称，一般与工程名相同-->
+    <dubbo:application name="07-provider-cache" />
+
+    <dubbo:registry address="zookeeper://zkOS1:2181?backup=zkOS2:2182,zkOS3:2183"/>
+
+    <!--注册服务执行对象-->
+    <bean id="someService" class="com.wyx.provider.SomeServiceImpl" />
+
+    <!--服务暴露-->
+    <!--提供者也可以添加 cache="true" -->
+    <dubbo:service interface="com.wyx.service.SomeService" ref="someService"/>
+
+</beans>

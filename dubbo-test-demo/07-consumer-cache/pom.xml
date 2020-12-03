@@ -8,12 +8,9 @@
         <groupId>com.wyx</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <artifactId>06-provider-timeout</artifactId>
+    <artifactId>07-consumer-cache</artifactId>
     <description>
-        服务超时-服务提供者
-            前面的服务降级的发生，其实是由于消费者调用服务超时引起的，
-            即从发出调用请求到 获取到提供者的响应结果这个时间超出了设定的时限。
-            默认服务调用超时时限为 1 秒。可以 在消费者端与提供者端设置超时时限。
+        声明式事务-消费者
     </description>
 
     <dependencies>
@@ -75,5 +72,4 @@
             <artifactId>commons-logging</artifactId>
         </dependency>
     </dependencies>
-
 </project>
