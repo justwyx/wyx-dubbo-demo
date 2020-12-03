@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>dubbo-test-demo</artifactId>
+        <groupId>com.wyx</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <artifactId>10-provider-async02</artifactId>
+    <description>
+        服务提供者-CompletableFuture异步调用
+            使用 Future 实现异步调用，对于无需获取返回值的操作来说不存在问题，
+            但消费者若 需要获取到最终的异步执行结果，则会出现问题:消费者在使用 Future 的 get()方法获取返 回值时被阻塞。
+            为了解决这个问题，Dubbo 又引入了 CompletableFuture 来实现对提供者的 异步调用。
+        总结
+            Future 与 CompletableFuture 的对比:
+             Future:Dubbo2.7.0版本之前消费者异步调用提供者的实现方式。源自于JDK5，对异步
+            结果的获取采用了阻塞与轮询方式。
+             CompletableFuture:Dubbo2.7.0版本之后消费者异步调用提供者的实现方式。源自于
+            JDK8，对异步结果的获取采用了回调的方式。
+
+    </description>
+
+    <dependencies>
+        <!--业务接口工程依赖-->
+        <dependency>
+            <groupId>com.wyx</groupId>
+            <artifactId>00-api</artifactId>
+        </dependency>
+        <!-- dubbo依赖 -->
+        <dependency>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo</artifactId>
+        </dependency>
+        <!-- Spring依赖 -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-expression</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aspects</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+        </dependency>
+        <!-- commons-logging依赖 -->
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>

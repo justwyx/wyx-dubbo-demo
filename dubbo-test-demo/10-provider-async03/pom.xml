@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>dubbo-test-demo</artifactId>
+        <groupId>com.wyx</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <artifactId>10-provider-async03</artifactId>
+    <description>
+        服务提供者-提供者的异步执行
+            从前面“对提供者的异步调用”例子可以看出，消费者对提供者实现了异步调用，
+            消费 者线程的执行过程不再发生阻塞，但提供者对 IO 耗时操作仍采用的是同步调用，即 IO 操作 仍会阻塞 Dubbo 的提供者线程。
+            但需要注意，提供者对 IO 操作的异步调用，并不会提升 RPC 响应速度，因为耗时操作 终归是需要消耗那么多时间后才能给出结果的。
+
+    </description>
+
+    <dependencies>
+        <!--业务接口工程依赖-->
+        <dependency>
+            <groupId>com.wyx</groupId>
+            <artifactId>00-api</artifactId>
+        </dependency>
+        <!-- dubbo依赖 -->
+        <dependency>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo</artifactId>
+        </dependency>
+        <!-- Spring依赖 -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-expression</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aspects</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+        </dependency>
+        <!-- commons-logging依赖 -->
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>

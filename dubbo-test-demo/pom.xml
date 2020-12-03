@@ -49,6 +49,13 @@
 <!--        <module>07-provider-cache</module>-->
 <!--        <module>07-consumer-cache</module>-->
 
+<!--        <module>10-consumer-async</module>-->
+<!--        <module>10-provider-async</module>-->
+
+<!--        <module>10-consumer-async02</module>-->
+<!--        <module>10-provider-async02</module>-->
+
+<!--        <module>10-provider-async03</module>-->
     </modules>
 
     <properties>
